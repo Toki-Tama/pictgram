@@ -49,6 +49,12 @@ test:
 #
 production:
   <<: *default
-  database: pictgram1_production
-  username: pictgram1
-  password: <%= ENV['PICTGRAM1_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  
+  
+  #52行目から上記に変更↑
+  #database: pictgram1_production
+  #username: pictgram1
+  #password: <%= ENV['PICTGRAM1_DATABASE_PASSWORD'] %>

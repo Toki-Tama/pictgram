@@ -6,7 +6,7 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6'
 # Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.4.4', '< 0.6.0'
+gem 'mysql2', '>= 0.4.4', '< 0.6.0', group: :development
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -64,6 +64,12 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+# この3行を追加Heroku
+group :production do
+  gem 'pg'
+end
+
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
@@ -79,3 +85,7 @@ gem 'pry-stack_explorer'
 gem 'bcrypt'
 
 gem "carrierwave"
+
+#追記
+#gem 'devise'
+#追記
