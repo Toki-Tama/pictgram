@@ -20,7 +20,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   def size_range
     1..10.megabytes
   end
-end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
