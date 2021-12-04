@@ -11,12 +11,15 @@ class UsersController < ApplicationController
     else
       flash.now[:danger] = "登録に失敗しました"
       render :new
+      #renderはredirect_toと違い、アクションを実行せずにviewファイルを表示させる。
+      #viewファイルには<%= render 'ファイル名' %>と記述する。
     end
   end
   
   private
   def user_params
    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+   #上記がストロングパラメーターの部分、記述した値はモデルのテーブル名と同じ
   end
 end
 

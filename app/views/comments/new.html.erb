@@ -4,13 +4,16 @@
       <div class="col-md-6 col-offset-3">
         <h1 class="text-conter">Add Comment</h1>
         <%= form_for @comment do|f| %>
+        <%=#form_for は投稿フォームに投稿された内容を保存するテーブルが存在するときに使う%>
+        <%=# controllerの@commentを引数にする。%>
           <div class="form-group">
             <%= f.label :content %>
             <%= f.text_area :description, class: "form-contral"%>
             <%= f.hidden_field :topic_id, value: @comment.topic_id %>
-            
+            <%=#f.hidden_fieldと value:が何かわからない%>
           </div>
           <%= f.submit 'コメントする', class: "btn btn-block btn-block" %>
+          <%=#f.submitはボタンを作れる%>
         <% end %>
       </div>
     </div>
